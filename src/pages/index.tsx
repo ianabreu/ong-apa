@@ -55,7 +55,7 @@ export default function Home({ data }: HomeProps) {
 //   return { props: { data } };
 // }
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/all-numbers`);
+  const res = await fetch(`${process.env.BASE_URL}/api/all-numbers`);
   const data = await res.json();
 
   return { props: { data } };
