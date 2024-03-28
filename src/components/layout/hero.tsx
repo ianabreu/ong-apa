@@ -3,9 +3,9 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="flex items-center justify-center h-screen max-h-[700px] bg-black bg-hero bg-cover bg-right"
+      className="flex items-center justify-center h-screen max-h-[800px] bg-black bg-hero bg-cover bg-center"
     >
-      <div className="flex flex-col justify-center text-white p-4 sm:pl-10 gap-2 w-full max-w-[1200px] ">
+      <div className="flex flex-col justify-center text-foreground p-4 sm:pl-10 gap-2 w-full max-w-[1200px] ">
         <p className="uppercase text-xl font-bold select-none">
           Os animais precisam de
         </p>
@@ -17,7 +17,7 @@ export function Hero() {
         <div className="flex pt-6">
           <Button
             variant={"default"}
-            className="border-2  hover:bg-transparent hover:border-primary hover:text-primary text-foreground border-primary duration-500"
+            className="border-2 hover:bg-transparent hover:border-primary hover:text-primary text-background border-primary duration-500"
           >
             Adote um bichinho
           </Button>

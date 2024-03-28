@@ -54,7 +54,7 @@ const config = {
         },
       },
       backgroundImage: {
-        hero: "url('/hero.png')",
+        hero: "url('/hero.jpg')",
       },
       borderRadius: {
         lg: "var(--radius)",

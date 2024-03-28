@@ -26,12 +26,18 @@ export function MenuDrawer() {
   if (width && width > 768) {
     return (
       <div className={`flex items-center gap-10`}>
-        <HeaderLink href="#NossosNumeros">Nossos Números</HeaderLink>
-        <HeaderLink href="#SobreNos">Sobre Nós</HeaderLink>
-        <HeaderLink href="#Adote">Adote</HeaderLink>
+        <HeaderLink textDark href="#NossosNumeros">
+          Nossos Números
+        </HeaderLink>
+        <HeaderLink textDark href="#SobreNos">
+          Sobre Nós
+        </HeaderLink>
+        <HeaderLink textDark href="#Adote">
+          Adote
+        </HeaderLink>
         <Button
           variant={"outline"}
-          className="border-primary text-primary bg-transparent hover:text-primary-foreground hover:bg-primary duration-500"
+          className="border-2 border-secondary-foreground text-secondary-foreground bg-transparent hover:text-primary-foreground hover:bg-secondary-foreground duration-500"
         >
           Doe agora
         </Button>
