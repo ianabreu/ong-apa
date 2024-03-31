@@ -1,18 +1,28 @@
 import Image from "next/image";
-import logo from "@/assets/logo.svg";
-import logo2 from "@/assets/logo-color.svg";
 
 interface LogoProps {
-  size?: "sm" | "md";
-  logoColor?: "white" | "color";
+  size?: keyof typeof SIZE;
+  color?: keyof typeof LOGO;
 }
+const LOGO = {
+  default: "/logo-color.png",
+  white: "/logo-white.png",
+  black: "/logo-black.png",
+};
+const SIZE = {
+  md: "w-[150px]",
+  lg: "w-[290px]",
+};
 
-export function Logo({ size = "sm", logoColor = "white" }: LogoProps) {
+export function Logo({ size = "md", color = "default" }: LogoProps) {
   return (
     <Image
-      src={logoColor === "color" ? logo2 : logo}
-      alt="Logo da APA"
-      width={size === "sm" ? 150 : undefined}
+      src={LOGO[color]}
+      alt="Logo da Associação Protetora dos Animais"
+      width={0}
+      height={0}
+      sizes="100vw"
+      className={`aspect-video ${SIZE[size]} object-contain`}
     />
   );
 }

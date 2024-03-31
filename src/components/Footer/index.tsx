@@ -3,16 +3,16 @@ import { FooterLinks } from "./footer-links";
 
 export function Footer() {
   return (
-    <footer className="bg-primary w-full flex flex-col items-center text-primary-foreground pt-12 pb-4 gap-4">
-      <div className="flex gap-4 sm:gap-8 flex-col sm:flex-row">
-        <Logo size="md" />
+    <footer className="flex w-full flex-col items-center gap-4 bg-primary_green_dark pb-4 pt-12 text-primary_white">
+      <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
+        <Logo size="lg" color="white" />
         <FooterLinks
-          title="APA"
+          title="Links"
           links={[
             { name: "Início", href: "#home" },
-            { name: "Nossos Números", href: "#NossosNumeros" },
-            { name: "Sobre Nós", href: "#SobreNos" },
-            { name: "Adote", href: "#Adote" },
+            { name: "Nossos Números", href: "#nossos_numeros" },
+            { name: "Sobre Nós", href: "#sobre_nos" },
+            { name: "Adote", href: "#adote" },
           ]}
         />
         <FooterLinks

@@ -3,7 +3,7 @@ interface ButtonAdoptProps extends ImageProps {}
 
 export function ButtonAdopt({ src, alt, ...ImageProps }: ButtonAdoptProps) {
   return (
-    <button className="flex max-w-80 w-full aspect-square overflow-hidden border-primary rounded-lg">
+    <button className="flex aspect-square w-full overflow-hidden rounded-lg border-primary">
       <Image
         src={src}
         alt={alt}

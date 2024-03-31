@@ -1,16 +1,16 @@
 import { Poppins } from "next/font/google";
-import Header from "@/components/layout/header";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { Hero } from "@/components/layout/hero";
-import { OurNumbersSection } from "@/components/layout/our-numbers";
+import Header from "@/components/Header";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+// } from "@/components/ui/carousel";
+import { HeroSection } from "@/components/HeroSection";
+import { OurNumbersSection } from "@/components/OurNumbersSection";
 import { OurNumbers } from "./api/all-numbers";
-import { Footer } from "@/components/layout/footer";
-import { AboutUsSection } from "@/components/layout/about-us";
-import { AdoptAnAnimal } from "@/components/layout/adopt-an-animal";
+import { Footer } from "@/components/Footer";
+import { AboutUsSection } from "@/components/AboutUsSection";
+import { Adopt } from "@/components/AdoptSection";
 
 const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
@@ -22,10 +22,11 @@ type HomeProps = {
 export default function Home({ data }: HomeProps) {
   return (
     <main
-      className={`flex bg-background min-h-screen flex-col items-center justify-start ${poppins.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start bg-primary_white ${poppins.className}`}
     >
       <Header />
-      <Carousel
+
+      {/* <Carousel
         className="w-full"
         opts={{
           loop: true,
@@ -33,16 +34,36 @@ export default function Home({ data }: HomeProps) {
       >
         <CarouselContent>
           {Array.from({ length: 1 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <Hero />
-            </CarouselItem>
+            <CarouselItem key={index}> */}
+      <section
+        id="home"
+        className="flex max-h-[780px] w-full justify-center bg-hero md:max-h-[600px]"
+      >
+        <HeroSection />
+      </section>
+      {/* </CarouselItem>
           ))}
         </CarouselContent>
-      </Carousel>
+      </Carousel> */}
 
-      <OurNumbersSection data={data} />
-      <AboutUsSection />
-      <AdoptAnAnimal />
+      <section
+        id="nossos_numeros"
+        className="flex w-full justify-center bg-primary_green_light py-8"
+      >
+        <OurNumbersSection data={data} />
+      </section>
+      <section
+        id="sobre_nos"
+        className="flex w-full justify-center bg-primary_green_dark py-8"
+      >
+        <AboutUsSection />
+      </section>
+      <section
+        id="adote"
+        className="flex w-full justify-center bg-primary_green_light py-8"
+      >
+        <Adopt />
+      </section>
       <Footer />
     </main>
   );

@@ -14,47 +14,70 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       colors: {
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "#004726",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "var(--muted)",
+          DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "var(--accent)",
+          DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
-          DEFAULT: "var(--popover)",
+          DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
-      },
-      backgroundImage: {
-        hero: "url('/hero.jpg')",
+        primary_green_light: "#e6ede9",
+        primary_green: "#90e7b5",
+        primary_green_dark: "#004726",
+
+        primary_white: "#fafafa",
+        primary_black: "#111111",
+
+        secondary_red: "#A81600",
+
+        cta: {
+          50: "#e6ede9",
+          100: "#b0c6bc",
+          200: "#8aaa9b",
+          300: "#54846e",
+          400: "#336c51",
+          500: "#004726",
+          600: "#004123",
+          700: "#00321b",
+          800: "#002715",
+          900: "#001e10",
+        },
+        white: "#f3f3f3",
+        glass: "rgba(243, 243, 243, 0.7)",
+        black: {
+          500: "#111111",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,6 +97,12 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        hero: "linear-gradient(325deg, #e6ede9 10%, #90e7b5 63%)",
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },

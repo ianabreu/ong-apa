@@ -31,7 +31,7 @@ export function FooterLinks({
           <Link
             href={href}
             target={external ? "_blank" : undefined}
-            className={`font-medium duration-500 hover:text-secondary-foreground text-primary-foreground`}
+            className={`font-medium text-primary_white duration-500 hover:text-primary_green`}
             onClick={external ? undefined : handleClick}
           >
             {name}
