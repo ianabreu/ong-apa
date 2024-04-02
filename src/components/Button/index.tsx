@@ -2,13 +2,20 @@ import {
   Button as ButtonUI,
   ButtonProps as ButtonPropsUI,
 } from "@/components/ui/button";
-import { forwardRef } from "react";
+import { Ref, forwardRef } from "react";
 
 interface ButtonProps extends ButtonPropsUI {}
 
 export const Button = forwardRef(
-  ({ children, ...ButtonPropsUI }: ButtonProps, ref) => {
-    return <ButtonUI {...ButtonPropsUI}>{children}</ButtonUI>;
+  (
+    { variant, children, ...ButtonPropsUI }: ButtonProps,
+    ref: Ref<HTMLButtonElement>,
+  ) => {
+    return (
+      <ButtonUI variant={variant} ref={ref} {...ButtonPropsUI}>
+        {children}
+      </ButtonUI>
+    );
   },
 );
 

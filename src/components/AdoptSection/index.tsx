@@ -11,9 +11,21 @@ export function Adopt({}: AdoptProps) {
         Adote um <span className="text-primary_green_dark">Animal</span>
       </h2>
       <div className="grid w-full grid-cols-1 place-items-center gap-8 sm:grid-cols-3">
-        <ButtonAdopt src={item01} alt="item01" />
-        <ButtonAdopt src={item02} alt="item02" />
-        <ButtonAdopt src={item03} alt="item03" />
+        <ButtonAdopt
+          data={{ name: "Totó", ageInMonth: 13, id: "1" }}
+          src={item01}
+          alt="item01"
+        />
+        <ButtonAdopt
+          data={{ name: "Mag", ageInMonth: 26, id: "2" }}
+          src={item02}
+          alt="item02"
+        />
+        <ButtonAdopt
+          data={{ name: "Rex", ageInMonth: 36, id: "5" }}
+          src={item03}
+          alt="item03"
+        />
       </div>
     </div>
   );

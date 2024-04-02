@@ -81,7 +81,7 @@ export default function Header() {
             <LinkDesktop href={"#sobre_nos"}>Sobre Nós</LinkDesktop>
             <LinkDesktop href={"#adote"}>Adote</LinkDesktop>
 
-            <Button>Doe agora</Button>
+            <Button variant={"default"}>Doe agora</Button>
           </nav>
         )}
       </div>

@@ -26,7 +26,7 @@ const config = {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#004726",
-          foreground: "hsl(var(--primary-foreground))",
+          foreground: "#e6ede9",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -60,24 +60,6 @@ const config = {
         primary_black: "#111111",
 
         secondary_red: "#A81600",
-
-        cta: {
-          50: "#e6ede9",
-          100: "#b0c6bc",
-          200: "#8aaa9b",
-          300: "#54846e",
-          400: "#336c51",
-          500: "#004726",
-          600: "#004123",
-          700: "#00321b",
-          800: "#002715",
-          900: "#001e10",
-        },
-        white: "#f3f3f3",
-        glass: "rgba(243, 243, 243, 0.7)",
-        black: {
-          500: "#111111",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -100,6 +82,8 @@ const config = {
       },
       backgroundImage: {
         hero: "linear-gradient(325deg, #e6ede9 10%, #90e7b5 63%)",
+        primary_transparent:
+          "linear-gradient(180deg, rgba(0,100,0,0) 50%, rgba(0,0,0,0.7) 90%)",
       },
       screens: {
         xs: "480px",
