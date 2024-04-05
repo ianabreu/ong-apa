@@ -22,7 +22,13 @@ export function ButtonAdopt({
   function handleOpenModal() {
     setOpenModal(true);
   }
-  function calcularIdade(ageInMonth: number) {
+  /**
+   * @description Transforma a idade em meses em um texto com anos completos e meses restantes.
+   * @author Ian Abreu
+   * @param {number} ageInMonth Idade do cachorro em meses.
+   * @returns {string} Exemplo: 3 anos e 11 meses
+   */
+  function calcularIdade(ageInMonth: number): string {
     let years: number = Math.floor(ageInMonth / 12);
     let month: number = ageInMonth % 12;
     let text = "";

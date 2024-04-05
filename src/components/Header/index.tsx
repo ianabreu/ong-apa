@@ -39,6 +39,15 @@ export default function Header() {
                 </Link>
 
                 <LinkMobile
+                  href={"#adote"}
+                  onClick={() => {
+                    setSheetOpen(false);
+                  }}
+                >
+                  Adote
+                </LinkMobile>
+
+                <LinkMobile
                   href={"#nossos_numeros"}
                   onClick={() => {
                     setSheetOpen(false);
@@ -56,16 +65,8 @@ export default function Header() {
                   Sobre Nós
                 </LinkMobile>
 
-                <LinkMobile
-                  href={"#adote"}
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                >
-                  Adote
-                </LinkMobile>
-
                 <Button
+                  variant={"destructive"}
                   onClick={() => {
                     setSheetOpen(false);
                   }}
@@ -77,11 +78,11 @@ export default function Header() {
           </Sheet>
         ) : (
           <nav className={`flex items-center gap-6`}>
+            <LinkDesktop href={"#adote"}>Adote</LinkDesktop>
             <LinkDesktop href={"#nossos_numeros"}>Nossos Números</LinkDesktop>
             <LinkDesktop href={"#sobre_nos"}>Sobre Nós</LinkDesktop>
-            <LinkDesktop href={"#adote"}>Adote</LinkDesktop>
 
-            <Button variant={"default"}>Doe agora</Button>
+            <Button variant={"destructive"}>Doe agora</Button>
           </nav>
         )}
       </div>

@@ -80,8 +80,19 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+
       backgroundImage: {
-        hero: "linear-gradient(325deg, #e6ede9 10%, #90e7b5 63%)",
+        hero: "linear-gradient(325deg, #e6ede9 10%, #90e7b5  63%)",
+
+        donation:
+          "linear-gradient(325deg, rgba(0, 71, 38, 0.7) 10%, rgba(0, 71, 38, 0.7) 63%), url('/donation.jpg')",
+
+        patronize:
+          "linear-gradient(325deg, rgba(0, 71, 38, 0.7) 10%, rgba(0, 71, 38, 0.7) 63%), url('/patronize.jpg')",
+
+        adopt:
+          "linear-gradient(325deg, rgba(0, 71, 38, 0.7) 10%, rgba(0, 71, 38, 0.7) 63%), url('/adopt.jpg')",
+
         primary_transparent:
           "linear-gradient(180deg, rgba(0,100,0,0) 50%, rgba(0,0,0,0.7) 90%)",
       },
@@ -90,7 +101,10 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwindcss-3d")({ legacy: true }),
+  ],
 } satisfies Config;
 
 export default config;

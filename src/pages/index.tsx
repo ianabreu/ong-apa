@@ -11,6 +11,7 @@ import { OurNumbers } from "./api/all-numbers";
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/AboutUsSection";
 import { Adopt } from "@/components/AdoptSection";
+import { HelperSection } from "@/components/HelperSection";
 
 const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
@@ -22,7 +23,7 @@ type HomeProps = {
 export default function Home({ data }: HomeProps) {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-start bg-primary_white ${poppins.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start overflow-hidden bg-primary_white ${poppins.className}`}
     >
       <Header />
 
@@ -46,6 +47,9 @@ export default function Home({ data }: HomeProps) {
         </CarouselContent>
       </Carousel> */}
 
+      <section id="adote" className="">
+        <HelperSection />
+      </section>
       <section
         id="nossos_numeros"
         className="flex w-full justify-center bg-primary_green_light py-8"
@@ -57,12 +61,6 @@ export default function Home({ data }: HomeProps) {
         className="flex w-full justify-center bg-primary_green_dark py-8"
       >
         <AboutUsSection />
-      </section>
-      <section
-        id="adote"
-        className="flex w-full justify-center bg-primary_green_light py-8"
-      >
-        <Adopt />
       </section>
       <Footer />
     </main>
