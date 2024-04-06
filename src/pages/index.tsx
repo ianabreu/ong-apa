@@ -38,7 +38,7 @@ export default function Home({ data }: HomeProps) {
             <CarouselItem key={index}> */}
       <section
         id="home"
-        className="flex max-h-[780px] w-full justify-center bg-hero md:max-h-[600px]"
+        className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero"
       >
         <HeroSection />
       </section>

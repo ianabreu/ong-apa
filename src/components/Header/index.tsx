@@ -13,7 +13,7 @@ export default function Header() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [sheetOpen, setSheetOpen] = useState(false);
   return (
-    <header className="flex min-h-20 w-full items-center bg-primary_green pt-4">
+    <header className="flex max-h-20 w-full items-center bg-primary_green pt-4">
       <div className="container flex flex-row items-center justify-between">
         <Link href={"/"} replace={true}>
           <Logo size="md" color="default" />

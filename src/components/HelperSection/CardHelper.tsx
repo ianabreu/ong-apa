@@ -26,10 +26,12 @@ export function CardHelper(props: CardHelperProps) {
     text-primary_white
     `}
     >
-      <h3 className="max-w-96 text-4xl font-bold drop-shadow-lg ">
+      <h3 className="max-w-96 text-4xl font-bold leading-tight drop-shadow-lg">
         {props.title}
       </h3>
-      <p className="text-base drop-shadow-lg">{props.content}</p>
+      <p className="text-base leading-relaxed drop-shadow-lg">
+        {props.content}
+      </p>
       <Button
         variant={"destructive"}
         className="gap-2 drop-shadow-lg"
