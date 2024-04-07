@@ -10,8 +10,8 @@ import { OurNumbersSection } from "@/components/OurNumbersSection";
 import { OurNumbers } from "./api/all-numbers";
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/AboutUsSection";
-import { Adopt } from "@/components/AdoptSection";
 import { HelperSection } from "@/components/HelperSection";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
@@ -22,12 +22,13 @@ type HomeProps = {
 };
 export default function Home({ data }: HomeProps) {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-start overflow-hidden bg-primary_white ${poppins.className}`}
-    >
-      <Header />
+    <>
+      <main
+        className={`flex min-h-screen flex-col items-center justify-start overflow-hidden bg-primary_white ${poppins.className}`}
+      >
+        <Header />
 
-      {/* <Carousel
+        {/* <Carousel
         className="w-full"
         opts={{
           loop: true,
@@ -36,34 +37,36 @@ export default function Home({ data }: HomeProps) {
         <CarouselContent>
           {Array.from({ length: 1 }).map((_, index) => (
             <CarouselItem key={index}> */}
-      <section
-        id="home"
-        className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero"
-      >
-        <HeroSection />
-      </section>
-      {/* </CarouselItem>
+        <section
+          id="home"
+          className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero"
+        >
+          <HeroSection />
+        </section>
+        {/* </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel> */}
 
-      <section id="ajuda" className="">
-        <HelperSection />
-      </section>
-      <section
-        id="nossos_numeros"
-        className="flex w-full justify-center bg-primary_green_light py-8"
-      >
-        <OurNumbersSection data={data} />
-      </section>
-      <section
-        id="sobre_nos"
-        className="flex w-full justify-center bg-primary_green_dark py-8"
-      >
-        <AboutUsSection />
-      </section>
-      <Footer />
-    </main>
+        <section id="ajuda" className="">
+          <HelperSection />
+        </section>
+        <section
+          id="nossos_numeros"
+          className="flex w-full justify-center bg-primary_green_light py-8"
+        >
+          <OurNumbersSection data={data} />
+        </section>
+        <section
+          id="sobre_nos"
+          className="flex w-full justify-center bg-primary_green_dark py-8"
+        >
+          <AboutUsSection />
+        </section>
+        <Footer />
+      </main>
+      <Toaster />
+    </>
   );
 }
 

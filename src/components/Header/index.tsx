@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { LinkMobile } from "./link-mobile";
 import { LinkDesktop } from "./link-desktop";
+import PaymentPage from "../PaymentModal";
 
 export default function Header() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -65,14 +66,15 @@ export default function Header() {
                   Sobre Nós
                 </LinkMobile>
 
-                <Button
+                <PaymentPage />
+                {/* <Button
                   variant={"destructive"}
                   onClick={() => {
                     setSheetOpen(false);
                   }}
                 >
                   Doe agora
-                </Button>
+                </Button> */}
               </nav>
             </SheetContent>
           </Sheet>
@@ -81,8 +83,7 @@ export default function Header() {
             <LinkDesktop href={"#ajuda"}>Como ajudar</LinkDesktop>
             <LinkDesktop href={"#nossos_numeros"}>Nossos Números</LinkDesktop>
             <LinkDesktop href={"#sobre_nos"}>Sobre Nós</LinkDesktop>
-
-            <Button variant={"destructive"}>Doe agora</Button>
+            <PaymentPage />
           </nav>
         )}
       </div>
