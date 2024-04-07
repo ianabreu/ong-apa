@@ -10,7 +10,7 @@ export function Footer() {
           title="Links"
           links={[
             { name: "Início", href: "#home" },
-            { name: "Adote", href: "#adote" },
+            { name: "Como ajudar", href: "#ajuda" },
             { name: "Nossos Números", href: "#nossos_numeros" },
             { name: "Sobre Nós", href: "#sobre_nos" },
           ]}

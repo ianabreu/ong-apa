@@ -47,7 +47,7 @@ export default function Home({ data }: HomeProps) {
         </CarouselContent>
       </Carousel> */}
 
-      <section id="adote" className="">
+      <section id="ajuda" className="">
         <HelperSection />
       </section>
       <section

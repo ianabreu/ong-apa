@@ -39,12 +39,12 @@ export default function Header() {
                 </Link>
 
                 <LinkMobile
-                  href={"#adote"}
+                  href={"#ajuda"}
                   onClick={() => {
                     setSheetOpen(false);
                   }}
                 >
-                  Adote
+                  Como ajudar
                 </LinkMobile>
 
                 <LinkMobile
@@ -78,7 +78,7 @@ export default function Header() {
           </Sheet>
         ) : (
           <nav className={`flex items-center gap-6`}>
-            <LinkDesktop href={"#adote"}>Adote</LinkDesktop>
+            <LinkDesktop href={"#ajuda"}>Como ajudar</LinkDesktop>
             <LinkDesktop href={"#nossos_numeros"}>Nossos Números</LinkDesktop>
             <LinkDesktop href={"#sobre_nos"}>Sobre Nós</LinkDesktop>
 
