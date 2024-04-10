@@ -9,7 +9,7 @@ export function Footer() {
         <FooterLinks
           title="Links"
           links={[
-            { name: "Início", href: "#home" },
+            { name: "Início", href: "/" },
             { name: "Como ajudar", href: "#ajuda" },
             { name: "Nossos Números", href: "#nossos_numeros" },
             { name: "Sobre Nós", href: "#sobre_nos" },

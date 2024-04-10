@@ -11,32 +11,37 @@ import { OurNumbers } from "./api/all-numbers";
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/AboutUsSection";
 import { HelperSection } from "@/components/HelperSection";
-import { Toaster } from "@/components/ui/toaster";
+import { Pix } from "./api/payments/pix";
+import DoantionModal from "@/components/PaymentModal";
+import { useState } from "react";
 
 const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
   preload: false,
 });
 type HomeProps = {
-  data: OurNumbers[];
+  all_Numbers: OurNumbers[];
+  pix: Pix;
 };
-export default function Home({ data }: HomeProps) {
+export default function Home({ all_Numbers, pix }: HomeProps) {
+  const [openModalPayments, setOpenModalPayments] = useState(false);
   return (
     <>
       <main
+        id="home"
         className={`flex min-h-screen flex-col items-center justify-start overflow-hidden bg-primary_white ${poppins.className}`}
       >
-        <Header />
+        <Header openModal={setOpenModalPayments} />
 
         {/* <Carousel
         className="w-full"
         opts={{
           loop: true,
         }}
-      >
+        >
         <CarouselContent>
-          {Array.from({ length: 1 }).map((_, index) => (
-            <CarouselItem key={index}> */}
+        {Array.from({ length: 1 }).map((_, index) => (
+        <CarouselItem key={index}> */}
         <section
           id="home"
           className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero"
@@ -45,17 +50,17 @@ export default function Home({ data }: HomeProps) {
         </section>
         {/* </CarouselItem>
           ))}
-        </CarouselContent>
+          </CarouselContent>
       </Carousel> */}
 
         <section id="ajuda" className="">
-          <HelperSection />
+          <HelperSection openModal={setOpenModalPayments} />
         </section>
         <section
           id="nossos_numeros"
           className="flex w-full justify-center bg-primary_green_light py-8"
         >
-          <OurNumbersSection data={data} />
+          <OurNumbersSection data={all_Numbers} />
         </section>
         <section
           id="sobre_nos"
@@ -64,15 +69,28 @@ export default function Home({ data }: HomeProps) {
           <AboutUsSection />
         </section>
         <Footer />
+        <DoantionModal
+          qrCode={pix.qr_code}
+          isOpen={openModalPayments}
+          setIsOpen={setOpenModalPayments}
+        />
       </main>
-      <Toaster />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.BASE_URL}api/all-numbers`);
-  const data = await res.json();
+  const allNumbersPromise = fetch(`${process.env.BASE_URL}api/all-numbers`);
+  const qrCodePromise = fetch(`${process.env.BASE_URL}api/payments/pix`);
 
-  return { props: { data } };
+  const [allNumbersResponse, qrCodeResponse] = await Promise.all([
+    allNumbersPromise,
+    qrCodePromise,
+  ]);
+
+  const allNumbers = allNumbersResponse.json();
+  const qrCode = qrCodeResponse.json();
+
+  const [all_Numbers, pix] = await Promise.all([allNumbers, qrCode]);
+  return { props: { all_Numbers, pix } };
 }

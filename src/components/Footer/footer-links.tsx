@@ -11,18 +11,6 @@ export function FooterLinks({
   links,
   external = false,
 }: FooterLinksProps) {
-  const handleClick = (e: any) => {
-    e.preventDefault();
-
-    const href = e.target.getAttribute("href").replace("/", "");
-    const selectedElement = document.querySelector(href);
-    if (!selectedElement) return null;
-
-    window.scroll({
-      top: selectedElement.offsetTop,
-      behavior: "smooth",
-    });
-  };
   return (
     <ul>
       {title && <span className="text-xl font-bold">{title}</span>}
@@ -32,7 +20,6 @@ export function FooterLinks({
             href={href}
             target={external ? "_blank" : undefined}
             className={`font-medium text-primary_white duration-500 hover:text-primary_green`}
-            onClick={external ? undefined : handleClick}
           >
             {name}
           </Link>

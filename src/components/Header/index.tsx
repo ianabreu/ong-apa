@@ -1,92 +1,54 @@
-import { Logo } from "../ui/logo";
-import { Button } from "@/components/Button";
-import { useMediaQuery } from "@/hooks/use-media-query";
-import { SheetContent, SheetTrigger, Sheet } from "../ui/sheet";
-import { Menu } from "lucide-react";
+import { useState } from "react";
 import Link from "next/link";
 
-import { useState } from "react";
-import { LinkMobile } from "./link-mobile";
-import { LinkDesktop } from "./link-desktop";
-import PaymentPage from "../PaymentModal";
+import { Logo } from "../ui/logo";
+import { Button } from "@/components/ui/button";
+import LinkMenu from "./LinkMenu";
+import { Icon } from "@/constants/icons";
 
-export default function Header() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const [sheetOpen, setSheetOpen] = useState(false);
+interface HeaderProps {
+  openModal: (isOpen: boolean) => void;
+}
+export default function Header({ openModal }: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="flex max-h-20 w-full items-center bg-primary_green pt-4">
-      <div className="container flex flex-row items-center justify-between">
-        <Link href={"/"} replace={true}>
-          <Logo size="md" color="default" />
-        </Link>
+    <header className="w-full bg-primary_green shadow">
+      <nav className="container">
+        <div className="flex w-full flex-col items-center justify-between md:flex-row">
+          <div className="flex w-full items-center justify-between ">
+            <Link href="/">
+              <Logo size="md" color="default" />
+            </Link>
 
-        {isMobile ? (
-          <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-            <SheetTrigger asChild>
-              <Button size={"icon"}>
-                <Menu />
+            <div className="md:hidden">
+              <Button
+                size={"icon"}
+                variant={"destructive"}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {Icon("menu")}
               </Button>
-            </SheetTrigger>
-
-            <SheetContent side={"right"}>
-              <nav className={`flex w-full flex-col items-center gap-4`}>
-                <Link
-                  href={"/"}
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                >
-                  <Logo size="md" color="default" />
-                </Link>
-
-                <LinkMobile
-                  href={"#ajuda"}
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                >
-                  Como ajudar
-                </LinkMobile>
-
-                <LinkMobile
-                  href={"#nossos_numeros"}
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                >
-                  Nossos Números
-                </LinkMobile>
-
-                <LinkMobile
-                  href={"#sobre_nos"}
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                >
-                  Sobre Nós
-                </LinkMobile>
-
-                <PaymentPage />
-                {/* <Button
-                  variant={"destructive"}
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                >
-                  Doe agora
-                </Button> */}
-              </nav>
-            </SheetContent>
-          </Sheet>
-        ) : (
-          <nav className={`flex items-center gap-6`}>
-            <LinkDesktop href={"#ajuda"}>Como ajudar</LinkDesktop>
-            <LinkDesktop href={"#nossos_numeros"}>Nossos Números</LinkDesktop>
-            <LinkDesktop href={"#sobre_nos"}>Sobre Nós</LinkDesktop>
-            <PaymentPage />
-          </nav>
-        )}
-      </div>
+            </div>
+          </div>
+          <div
+            className={`w-full flex-1 items-center text-center md:flex ${isOpen ? "block" : "hidden"}`}
+          >
+            <div className="flex flex-col items-center md:mx-6 md:flex-row md:gap-4">
+              <LinkMenu href={"#ajuda"}>Como ajudar</LinkMenu>
+              <LinkMenu href={"#nossos_numeros"}>Nossos Números</LinkMenu>
+              <LinkMenu href={"#sobre_nos"}>Sobre Nós</LinkMenu>
+              <Button
+                variant={"destructive"}
+                className="w-full uppercase"
+                onClick={() => openModal(true)}
+              >
+                Doe Agora
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }

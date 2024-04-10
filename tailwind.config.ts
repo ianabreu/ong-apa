@@ -85,13 +85,13 @@ const config = {
         hero: "linear-gradient(325deg, #e6ede9 10%, #90e7b5  63%)",
 
         donation:
-          "linear-gradient(325deg, rgba(0, 71, 38, 0.7) 10%, rgba(0, 71, 38, 0.7) 63%), url('/donation.jpg')",
+          "linear-gradient(325deg, rgba(0, 20, 0, 0.85) 10%, rgba(0, 71, 38, 0.85) 63%), url('/donation.jpg')",
 
         patronize:
-          "linear-gradient(325deg, rgba(0, 71, 38, 0.7) 10%, rgba(0, 71, 38, 0.7) 63%), url('/patronize.jpg')",
+          "linear-gradient(325deg, rgba(0, 20, 0, 0.85) 10%, rgba(0, 71, 38, 0.85) 63%), url('/patronize.jpg')",
 
         adopt:
-          "linear-gradient(325deg, rgba(0, 71, 38, 0.7) 10%, rgba(0, 71, 38, 0.7) 63%), url('/adopt.jpg')",
+          "linear-gradient(325deg, rgba(0, 20, 0, 0.85) 10%, rgba(0, 71, 38, 0.85) 63%), url('/adopt.jpg')",
 
         primary_transparent:
           "linear-gradient(180deg, rgba(0,100,0,0) 50%, rgba(0,0,0,0.7) 90%)",
