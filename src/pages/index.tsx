@@ -1,5 +1,5 @@
 import { Poppins } from "next/font/google";
-// import Head from "next/head";
+import Head from "next/head";
 import Header from "@/components/Header";
 // import {
 //   Carousel,
@@ -32,7 +32,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
   }
   return (
     <>
-      {/* <Head>
+      <Head>
         <meta charSet="utf-8" />
         <title>APA — Associação Protetora dos Animais</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,13 +50,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
           content="ONG de Livramento de Nossa Senhora, cuidamos de animais doentes e providenciamos lares para eles."
         />
         <meta property="og:type" content="website" />
-        {/* <meta
-          property="og:image"
-          content="https://static.tildacdn.one/tild3836-3531-4536-b630-613966383361/thumb-instituocarame.jpg"
-        /> 
-        <link rel="canonical" href="https://apalivramento.vercel.app" />
-        <meta http-equiv="x-dns-prefetch-control" content="on" />
-      </Head> */}
+      </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-start overflow-hidden bg-primary_white ${poppins.className}`}
       >
@@ -95,28 +89,37 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
           <AboutUsSection />
         </section>
         <Footer />
-        {/* <DoantionModal
+        <DoantionModal
           qrCode={pix.qr_code}
           isOpen={openModalPayments}
           setIsOpen={setOpenModalPayments}
-        /> */}
+        />
       </main>
     </>
   );
 }
 
-// export async function getStaticProps() {
-//   const allNumbersPromise = fetch(`${process.env.BASE_URL}api/all-numbers`);
-//   const qrCodePromise = fetch(`${process.env.BASE_URL}api/payments/pix`);
+export async function getStaticProps() {
+  const allNumbersPromise = fetch(`${process.env.BASE_URL}api/all-numbers`);
+  // const qrCodePromise = fetch(`${process.env.BASE_URL}api/payments/pix`);
 
-//   const [allNumbersResponse, qrCodeResponse] = await Promise.all([
-//     allNumbersPromise,
-//     qrCodePromise,
-//   ]);
+  const [
+    allNumbersResponse,
+    // qrCodeResponse
+  ] = await Promise.all([
+    allNumbersPromise,
+    // qrCodePromise,
+  ]);
 
-//   const allNumbers = allNumbersResponse.json();
-//   const qrCode = qrCodeResponse.json();
+  const allNumbers = allNumbersResponse.json();
+  // const qrCode = qrCodeResponse.json();
 
-//   const [all_Numbers, pix] = await Promise.all([allNumbers, qrCode]);
-//   return { props: { all_Numbers, pix } };
-// }
+  const [
+    all_Numbers,
+    // pix
+  ] = await Promise.all([
+    allNumbers,
+    // qrCode
+  ]);
+  return { props: { all_Numbers, pix: "" } };
+}
