@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Poppins } from "next/font/google";
 import Head from "next/head";
 import Header from "@/components/Header";
@@ -14,7 +15,6 @@ import { AboutUsSection } from "@/components/AboutUsSection";
 import { HelperSection } from "@/components/HelperSection";
 import { Pix } from "./api/payments/pix";
 import DoantionModal from "@/components/PaymentModal";
-// import { useState } from "react";
 
 const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
@@ -25,11 +25,8 @@ type HomeProps = {
   pix: Pix;
 };
 export default function Home({ all_Numbers, pix }: HomeProps) {
-  // const [openModalPayments, setOpenModalPayments] = useState(false);
-  let openModalPayments = false;
-  function setOpenModalPayments(isOpen: boolean) {
-    openModalPayments = isOpen;
-  }
+  const [openModalPayments, setOpenModalPayments] = useState(false);
+
   return (
     <>
       <Head>
