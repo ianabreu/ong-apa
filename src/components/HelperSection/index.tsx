@@ -4,7 +4,6 @@ type HelperSectionProps = {
   openModal: (isOpen: boolean) => void;
 };
 export function HelperSection(props: HelperSectionProps) {
-  function goToURL() {}
   return (
     <div className="grid w-screen grid-cols-1 justify-stretch sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 ">
       <CardHelper
@@ -22,6 +21,7 @@ export function HelperSection(props: HelperSectionProps) {
         href={
           "https://wa.me/5577999824116?text=Quero%20apadrinhar%20um%20pet%20"
         }
+        hasIcon
       />
       <CardHelper
         title="Adote um Animal! Adotar transforma vidas."
@@ -29,6 +29,7 @@ export function HelperSection(props: HelperSectionProps) {
         bgImage="bg-adopt"
         isLink
         href={"https://wa.me/5577999824116?text=Quero%20adotar%20um%20pet%20"}
+        hasIcon
       />
     </div>
   );
