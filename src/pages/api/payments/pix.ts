@@ -12,10 +12,9 @@ export default async function handler(
 ) {
   const docRef = doc(db, "payment_methods", "pix");
   const response = await getDoc(docRef);
+  let pix: Pix;
   if (response.exists()) {
-    const pix = response.data().qr_code;
-    res.status(200).json({ qr_code: pix });
-  } else {
-    res.status(200).json({ qr_code: "" });
+    pix = response.data() as Pix;
+    res.status(200).json(pix);
   }
 }

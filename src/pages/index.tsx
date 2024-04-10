@@ -101,25 +101,16 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
 
 export async function getStaticProps() {
   const allNumbersPromise = fetch(`${process.env.BASE_URL}api/all-numbers`);
-  // const qrCodePromise = fetch(`${process.env.BASE_URL}api/payments/pix`);
+  const qrCodePromise = fetch(`${process.env.BASE_URL}api/payments/pix`);
 
-  const [
-    allNumbersResponse,
-    // qrCodeResponse
-  ] = await Promise.all([
+  const [allNumbersResponse, qrCodeResponse] = await Promise.all([
     allNumbersPromise,
-    // qrCodePromise,
+    qrCodePromise,
   ]);
 
   const allNumbers = allNumbersResponse.json();
-  // const qrCode = qrCodeResponse.json();
+  const qrCode = qrCodeResponse.json();
 
-  const [
-    all_Numbers,
-    // pix
-  ] = await Promise.all([
-    allNumbers,
-    // qrCode
-  ]);
-  return { props: { all_Numbers, pix: "" } };
+  const [all_Numbers, pix] = await Promise.all([allNumbers, qrCode]);
+  return { props: { all_Numbers, pix } };
 }
