@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import QRCode from "react-qr-code";
 import { useToast } from "@/components/ui/use-toast";
 
-import { Icon, IconProps } from "@/constants/icons";
+import { Icon } from "@/constants/icons";
 import Image from "next/image";
 
 import caixa from "@/assets/banks/caixa.svg";
@@ -28,7 +28,6 @@ export default function DoantionPage({
 }: DoantionPageProps) {
   const { toast } = useToast();
 
-  const onOpenModal = () => setIsOpen(true);
   const onCloseModal = () => setIsOpen(false);
 
   return (
@@ -100,6 +99,7 @@ export default function DoantionPage({
                 quality={70}
                 width={0}
                 height={0}
+                priority={false}
                 sizes="100vw"
                 className="object-contain"
               />
@@ -122,6 +122,7 @@ export default function DoantionPage({
                 quality={70}
                 width={0}
                 height={0}
+                priority={false}
                 sizes="100vw"
                 className="object-contain"
               />

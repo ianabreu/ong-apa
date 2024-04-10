@@ -13,7 +13,11 @@ export function FooterLinks({
 }: FooterLinksProps) {
   return (
     <ul>
-      {title && <span className="text-xl font-bold">{title}</span>}
+      {title && (
+        <li>
+          <span className="text-xl font-bold">{title}</span>
+        </li>
+      )}
       {links.map(({ name, href }, index) => (
         <li key={index} className="pt-2">
           <Link

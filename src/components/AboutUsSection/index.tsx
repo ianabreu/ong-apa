@@ -10,6 +10,8 @@ export function AboutUsSection({}: AboutUsProps) {
           alt="Abrigo da Associação Protetora dos Animais"
           width={0}
           height={0}
+          priority={true}
+          loading="eager"
           sizes="100vw"
           className="w-full object-cover duration-500 hover:scale-105"
         />

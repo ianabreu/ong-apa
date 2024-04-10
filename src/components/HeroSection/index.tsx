@@ -17,6 +17,7 @@ export function HeroSection() {
           src={"/dog.png"}
           alt="dog"
           width={0}
+          priority={false}
           height={0}
           sizes="100vw"
           className="h-full w-full object-contain"

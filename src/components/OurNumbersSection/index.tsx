@@ -13,6 +13,7 @@ export function OurNumbersSection({ data }: OurNumbersProps) {
           src={"/abrigo.png"}
           alt="Ilustração simbolizando atendimento no abrigo"
           width={0}
+          priority={false}
           height={0}
           sizes="100vw"
           className="h-full w-full object-contain"
@@ -22,7 +23,7 @@ export function OurNumbersSection({ data }: OurNumbersProps) {
         <h2 className="pb-4 text-center text-2xl font-bold duration-500 sm:text-3xl">
           Nossos <span className="text-primary_green_dark">Números</span>
         </h2>
-        <div className="xs:grid-cols-2 grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4 xs:grid-cols-2">
           {data.map(({ valor, descricao }, index) => (
             <OurNumbersItem key={index} valor={valor} descricao={descricao} />
           ))}

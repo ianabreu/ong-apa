@@ -22,6 +22,7 @@ export function Logo({ size = "md", color = "default" }: LogoProps) {
       width={0}
       height={0}
       sizes="100vw"
+      priority={false}
       className={`aspect-video ${SIZE[size]} object-contain`}
     />
   );

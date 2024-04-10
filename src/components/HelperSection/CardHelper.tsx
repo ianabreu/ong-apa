@@ -59,6 +59,7 @@ export function CardHelper({
         </Link>
       ) : (
         <Button
+          type="button"
           variant={"destructive"}
           className="w-full gap-2 drop-shadow-lg"
           onClick={onClick}

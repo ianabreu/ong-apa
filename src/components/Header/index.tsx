@@ -23,9 +23,11 @@ export default function Header({ openModal }: HeaderProps) {
 
             <div className="md:hidden">
               <Button
+                type="button"
                 size={"icon"}
                 variant={"destructive"}
                 onClick={() => setIsOpen(!isOpen)}
+                title="Menu"
               >
                 {Icon("menu")}
               </Button>
@@ -39,6 +41,7 @@ export default function Header({ openModal }: HeaderProps) {
               <LinkMenu href={"#nossos_numeros"}>Nossos Números</LinkMenu>
               <LinkMenu href={"#sobre_nos"}>Sobre Nós</LinkMenu>
               <Button
+                type="button"
                 variant={"destructive"}
                 className="w-full uppercase"
                 onClick={() => openModal(true)}

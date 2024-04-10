@@ -1,6 +1,6 @@
 import Image, { ImageProps } from "next/image";
 import { useState } from "react";
-import { Button } from "../Button";
+import { Button } from "@/components/ui/button";
 interface ButtonAdoptProps extends ImageProps {
   data: {
     name: string;
@@ -102,6 +102,7 @@ export function ButtonAdopt({
         src={src}
         alt={alt}
         width={0}
+        priority={false}
         height={0}
         sizes="100%"
         className={`w-full object-cover duration-500 ${modalIsOpen ? "scale-105" : ""}`}
