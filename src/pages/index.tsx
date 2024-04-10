@@ -36,7 +36,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
           name="description"
           content="ONG de Livramento de Nossa Senhora, cuidamos de animais doentes e providenciamos lares para eles."
         />
-        <meta property="og:url" content="https://institutocaramelo.org" />
+        <meta property="og:url" content="https://apalivramento.vercel.app" />
         <meta
           property="og:title"
           content="APA — Associação Protetora dos Animais"
@@ -67,10 +67,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
         <CarouselContent>
         {Array.from({ length: 1 }).map((_, index) => (
         <CarouselItem key={index}> */}
-        <section
-          id="home"
-          className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero"
-        >
+        <section className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero">
           <HeroSection />
         </section>
         {/* </CarouselItem>
