@@ -28,7 +28,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
   const [openModalPayments, setOpenModalPayments] = useState(false);
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta charSet="utf-8" />
         <title>APA — Associação Protetora dos Animais</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,7 +36,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
           name="description"
           content="ONG de Livramento de Nossa Senhora, cuidamos de animais doentes e providenciamos lares para eles."
         />
-        <meta property="og:url" content="https://institutocaramelo.org" />
+        <meta property="og:url" content="https://apalivramento.vercel.app" />
         <meta
           property="og:title"
           content="APA — Associação Protetora dos Animais"
@@ -49,10 +49,10 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
         {/* <meta
           property="og:image"
           content="https://static.tildacdn.one/tild3836-3531-4536-b630-613966383361/thumb-instituocarame.jpg"
-        /> */}
+        /> 
         <link rel="canonical" href="https://apalivramento.vercel.app" />
         <meta http-equiv="x-dns-prefetch-control" content="on" />
-      </Head>
+      </Head> */}
       <main
         className={`flex min-h-screen flex-col items-center justify-start overflow-hidden bg-primary_white ${poppins.className}`}
       >
@@ -67,10 +67,7 @@ export default function Home({ all_Numbers, pix }: HomeProps) {
         <CarouselContent>
         {Array.from({ length: 1 }).map((_, index) => (
         <CarouselItem key={index}> */}
-        <section
-          id="home"
-          className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero"
-        >
+        <section className="flex h-full max-h-[calc(100vh-80px)] w-full justify-center bg-hero">
           <HeroSection />
         </section>
         {/* </CarouselItem>
